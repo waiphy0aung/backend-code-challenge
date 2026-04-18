@@ -1,0 +1,24 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Book {
+  id            Int      @id @default(autoincrement())
+  title         String
+  author        String
+  genre         String   @default("OTHER")     // FICTION | NON_FICTION | SCIENCE | HISTORY | BIOGRAPHY | OTHER
+  publishedYear Int?
+  status        String   @default("AVAILABLE") // AVAILABLE | CHECKED_OUT
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@index([genre])
+  @@index([status])
+  @@index([author])
+}

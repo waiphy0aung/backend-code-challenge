@@ -1,6 +1,10 @@
 node_modules/
 dist/
 
+# Prisma-generated
+src/problem5/prisma/generated/
+src/problem5/prisma/migrations/
+
 # Env
 .env
 .env.local
@@ -13,3 +17,7 @@ dist/
 # Logs
 *.log
 npm-debug.log*
+
+# SQLite
+src/problem5/prisma/*.db
+src/problem5/prisma/*.db-journal
