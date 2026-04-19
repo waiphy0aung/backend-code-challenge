@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { createApp } from "./app";
+import { disconnect } from "./db";
 
 const PORT = Number(process.env.PORT ?? 3000);
 
@@ -11,6 +12,7 @@ const server = app.listen(PORT, () => {
 async function shutdown(signal: string) {
   console.log(`\nReceived ${signal}. Shutting down gracefully...`);
   server.close(async () => {
+    await disconnect();
     process.exit(0);
   })
 }
