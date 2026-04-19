@@ -2,6 +2,7 @@
   "name": "backend-code-challenge",
   "version": "1.0.0",
   "scripts": {
+    "dev": "npm run prisma:generate && npm run db:setup && tsx src/problem5/server.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:p4": "jest src/problem4 --runInBand",
     "prisma:generate": "prisma generate --schema src/problem5/prisma/schema.prisma",
@@ -9,6 +10,8 @@
     "db:setup:test": "DATABASE_URL=\"file:./test.db\" tsx src/problem5/scripts/setupDb.ts"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/jest": "^30.0.0",
     "@types/node": "^25.6.0",
     "@types/supertest": "^7.2.0",
@@ -22,6 +25,10 @@
   "dependencies": {
     "@asteasolutions/zod-to-openapi": "^8.5.0",
     "@prisma/client": "^5.22.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "helmet": "^8.1.0",
     "zod": "^4.3.6"
   }
 }
