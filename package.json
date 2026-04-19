@@ -20,6 +20,8 @@
     "typescript": "^6.0.3"
   },
   "dependencies": {
-    "@prisma/client": "^5.22.0"
+    "@asteasolutions/zod-to-openapi": "^8.5.0",
+    "@prisma/client": "^5.22.0",
+    "zod": "^4.3.6"
   }
 }
