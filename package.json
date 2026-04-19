@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "npm run prisma:generate && npm run db:setup && tsx src/problem5/server.ts",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "npm run prisma:generate && npm run db:setup:test && DATABASE_URL=\"file:./test.db\" jest --runInBand",
     "test:p4": "jest src/problem4 --runInBand",
     "prisma:generate": "prisma generate --schema src/problem5/prisma/schema.prisma",
     "db:setup": "DATABASE_URL=\"file:./dev.db\" tsx src/problem5/scripts/setupDb.ts",
