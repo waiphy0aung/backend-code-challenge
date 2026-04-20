@@ -36,8 +36,8 @@ router.get("/", asyncHandler(async (req, res) => {
 
   const where: Prisma.BookWhereInput = {};
   if (genre) where.genre = genre;
-  if (status) where.status = genre;
-  if (author) where.author = author;
+  if (status) where.status = status;
+  if (author) where.author = { contains: author };
   if (q) where.title = { contains: q };
 
   if (yearFrom !== undefined || yearTo !== undefined) {
