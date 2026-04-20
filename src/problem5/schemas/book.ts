@@ -5,7 +5,7 @@ extendZodWithOpenApi(z);
 
 export const BookGenre = z.enum(["FICTION", "NON_FICTION", "SCIENCE", "HISTORY", "BIOGRAPHY", "OTHER"]).openapi({ example: "FICTION" })
 
-export const BookStatus = z.enum(["AVAILABLE", "CHECKED_OUT"]).openapi({ example: "FICTION" });
+export const BookStatus = z.enum(["AVAILABLE", "CHECKED_OUT"]).openapi({ example: "AVAILABLE" });
 
 export const BookSchema = z
   .object({
