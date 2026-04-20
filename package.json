@@ -5,6 +5,8 @@
     "dev": "npm run prisma:generate && npm run db:setup && tsx src/problem5/server.ts",
     "test": "npm run prisma:generate && npm run db:setup:test && DATABASE_URL=\"file:./test.db\" jest --runInBand",
     "test:p4": "jest src/problem4 --runInBand",
+    "test:p5": "npm run prisma:generate && npm run db:setup:test && DATABASE_URL=\"file:./test.db\" jest src/problem5 --runInBand",
+    "typecheck": "tsc --noEmit",
     "prisma:generate": "prisma generate --schema src/problem5/prisma/schema.prisma",
     "db:setup": "DATABASE_URL=\"file:./dev.db\" tsx src/problem5/scripts/setupDb.ts",
     "db:setup:test": "DATABASE_URL=\"file:./test.db\" tsx src/problem5/scripts/setupDb.ts"
