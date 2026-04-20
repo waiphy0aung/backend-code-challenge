@@ -7,6 +7,8 @@ const PORT = Number(process.env.PORT ?? 3000);
 const app = createApp();
 const server = app.listen(PORT, () => {
   console.log(`Book API listening on http://localhost:${PORT}`);
+  console.log(`Swagger UI:  http://localhost:${PORT}/docs`);
+  console.log(`OpenAPI:     http://localhost:${PORT}/openapi.json`);
 })
 
 async function shutdown(signal: string) {
